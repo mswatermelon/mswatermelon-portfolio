@@ -1,13 +1,21 @@
-# Учебный шаблон проекта Portfolio
+# Мой проект Portfolio
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/), а так же 
 [последняя версия Yarn](https://yarnpkg.com/ru/docs/install)
 
 ##  Чтобы развернуть проект необходимо:
 ```sh
-$ git clone git@github.com:loftschool/ls-advanced-portfolio.git
+$ git clone git@github.com:mswatermelon/mswatermelon-portfolio
 $ cd ls-advanced-portfolio
-$ yarn
+```
+##### И:
+```sh
+$ npm run имя_скрипта
+```
+
+##### либо:
+```sh
+$ yarn имя_скрипта
 ```
 
 ## Скрипты package.json:
@@ -18,12 +26,7 @@ $ yarn
 | build | Соберет проект для **production** (проект готов к загрузке на сервер) |
 | reg | Консольная утилита для регистрации. Использовать перед началом работы над **админ-панелью**. |
 
-#### Чтобы запустить скрипт:
-```sh
-$ npm run имя_скрипта
-```
-
-##### Либо:
-```sh
-$ yarn имя_скрипта
-```
+##  Автор:
+####Аристархова Вероника Юрьевна 
+#####Курс VUE.JS 
+######27.04.2020 - 05.06.2020
