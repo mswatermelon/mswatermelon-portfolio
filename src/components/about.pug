@@ -1,0 +1,28 @@
+.about
+    .aboout__user-data
+        .user-info
+            .user-info__avatar
+                include ./avatar
+
+            .user-info__content
+                -
+                    var userdata = [
+                        ["Проживаю", "София"],
+                        ["Проживаю", "София"],
+                        ["Проживаю", "София"],
+                    ];
+                table.user-info__data
+                    tbody.user-info__data-body
+                        each row in userdata
+                            tr
+                                td #{row[0]}
+                                td #{row[1]}
+
+    .about__content
+        .about__disclaimer Привет!
+            h2.about__title Владимир
+            .about__desc
+                p Я занимаюсь разработкой современных сайтов и приложений
+                p Я занимаюсь разработкой современных сайтов и приложений
+            .about__ps
+                p Этот проект сделан в рамках обучения в Loftschool

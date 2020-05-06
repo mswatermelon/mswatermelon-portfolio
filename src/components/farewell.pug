@@ -1,0 +1,36 @@
+section.farewell
+    .farewell__date
+        //+icon("copyright", "date__copiright")
+        .farewell__year
+            p 2019
+
+    .farewell__hero
+        .squaredescription
+            h2.squaredescription__text Владимир Астаханов
+            .squaredescription__details
+                p Личный сайт веб-разработчика
+
+    .farewell__more
+        .farewell__menu
+            include ./menu
+        .farewell__info-table
+            -
+                var userdata = [
+                    ["Проживаю", "София"],
+                    ["Проживаю", "София"],
+                    ["Проживаю", "София"],
+                ];
+            table.footer-info__data
+                tbody.footer-info__data-body
+                    tr
+                        td
+                            .footer-info__text Этот сайт я сделал в рамках обучения а Школе онлайн образования Loftschool
+                            .footer-info__socials
+                                include ./socials
+                        td
+                            .footer-info__main-quote
+                                .quote
+                                    .quote__text
+                                        p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                                    .quote__author
+                                        p Martin Golding

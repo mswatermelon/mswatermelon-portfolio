@@ -1,0 +1,28 @@
+.section.recommends
+    .reviews
+        .reviews__header
+            h2.reviews__title Что обо мне говорят
+            .reviews__actions
+                ul.toolbar
+                    li.toolbar__next
+                    li.toolbar__prev
+        .reviews__content
+            -
+                var reviewers = [
+                    ['reviewer1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', {name: "Ковальчук Дмитрий", profession: "Автор курса"}],
+                    ['reviewer2','Lorem ipsum dolor sit amet, consectetur adipiscing elit', {name: "Ковальчук Дмитрий", profession: "Автор курса"}]
+                ]
+            each reviewer in reviewers
+                .review
+                    .review__img
+                        +image(`content/${reviewer[0]}.png`, "review__icon")
+                    .review__description
+                        .review__text
+                            p= reviewer[1]
+                        .review__author
+                            .author-info
+                                .author-info__details
+                                    .person-details
+                                        h3.person-details__name= reviewer[2].name
+                                        .person-details__profession
+                                            p= reviewer[2].profession
