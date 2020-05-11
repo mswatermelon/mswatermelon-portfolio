@@ -1,0 +1,26 @@
+.examples__container {
+    @include phones {
+        width: 100%;
+    }
+}
+
+.examples__content {
+    padding-bottom: 60px;
+    @include phones {
+        padding-bottom: 0px;
+    }
+}
+
+.examples__title {
+    @include phones {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+.examples__title-content {
+    color: $black;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+}

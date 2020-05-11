@@ -1,32 +1,6 @@
 .section.examples
-    .examples__title
-        h2.examples__title-content Мои работы
-    .examples__content
-        .preview__visual
-            .preview__visual-layout
-                .project
-                    - var items = ["1", "2", "3", "4"];
-                    ul.project__list
-                        each item in items
-                            li.project__item
-                                +image(`content/${item}.jpg`, "project__img")
-                                img(src="", alt="").project__img
-            .preview__visual-actions
-                .actions
-                    ul.toolbar
-                        li.toolbar__next
-                        li.toolbar__prev
-        .preview__description
-            .descriptionblock
-                .techologystack
-                    - var items = ["1", "2", "3", "4"];
-                    ul.instruments
-                        each item in items
-                            li.instruments__item
-                .projectdetails
-                    include ./lengthtitle
-                .prjectlink
-                    .iconlink
-                        .iconlink__symbol
-                            +icon(`link`, "iconlink__img")
-                        .iconlink__link Посмотреть сайт
+    .container.examples__container
+        .examples__title
+            h2.examples__title-content Мои работы
+        .examples__content
+            #works-component

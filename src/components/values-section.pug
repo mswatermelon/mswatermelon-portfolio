@@ -1,22 +1,12 @@
 .section.values-section
-    .values-section__title
-        .values-section__title-content
-            include ./lengthtitle
+    .values-section__image
+        +image("content/hands.png", "values-section__icon")
 
     .values-section__content
-        -
-            var items = [
-                ["frontend", ['html', 'css', 'jQuery']],
-                ["frontend", ['html', 'css', 'jQuery']]
-            ]
-        ul.skills-list
-            each row in items
-                li.skills-list__item.skills-row
-                    .skills-row__title #{row[0]}
-                    ul.skills-row__list
-                        each cell in row[1]
-                            li.skills-row__item
-                                .skill
-                                    .skill__circle
-                                    .skill__circle
-                                    .skill__title= cell
+        .values-section__title
+            .values-section__title-content
+                include ./lengthtitle
+
+        .values-section__values
+            #skills-component
+
