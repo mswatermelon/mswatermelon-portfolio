@@ -1,4 +1,58 @@
+.data-input {
+    flex: 1;
+}
+
 .data-input__icon {
     width: 30px;
     height: 30px;
+    fill: $white;
+    opacity: 0.3;
+}
+
+.data-input__label {
+    opacity: .3;
+    font-family: $font-semibold;
+    padding-bottom: 14px;
+}
+
+.data-input__field {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+.data-input__icon {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+    opacity: .3;
+    margin-right: 16px;
+}
+
+.data-input__box-container {
+    flex: 1;
+}
+
+.data-input__box {
+    color: currentColor;
+    background: transparent;
+    border: none;
+    width: 100%;
+    resize: none;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 36px;
+
+    &::placeholder {
+        color: currentColor;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }

@@ -3,16 +3,28 @@
     display: flex;
     padding-top: 173px;
     padding-bottom: 271px;
+
+    @include phones {
+        flex-direction: column;
+    }
 }
 
 .about__user-data {
     font-family: $font-semibold;
     flex: 1;
+
+    @include tablets {
+        margin-bottom: 31px;
+    }
 }
 
 .about__content {
     flex: 4;
     padding-left: 53px;
+
+    @include tablets {
+        padding-left: 0;
+    }
 }
 
 .about__disclaimer,
@@ -28,11 +40,16 @@
 
 .about__desc {
     margin-bottom: 105px;
+
+    @include tablets {
+        margin-bottom: 46px;
+    }
 }
 
 .about__ps {
     opacity: .5;
     line-height: 30px;
+    font-style: italic;
 }
 
 .about__title {

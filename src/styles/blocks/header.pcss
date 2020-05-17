@@ -6,6 +6,19 @@
     line-height: 30px;
 }
 
+.header__links {
+    display: flex;
+
+    @include tablets {
+        justify-content: flex-end;
+    }
+
+    @include phones {
+        display: none;
+    }
+
+}
+
 .header__logo {
     font-family: $font-extrabold, sans-serif;
     font-size: 36px;
@@ -14,4 +27,15 @@
 
 .header__btns {
     margin: 0 20px;
+
+    @include tablets {
+        display: none;
+    }
+}
+
+.header__btn {
+    display: none;
+    @include tablets {
+        display: flex;
+    }
 }

@@ -1,30 +1,31 @@
 .section.connection
     .mailform
         .mailform__header
-            h2.mailform__title Связаться со мной
-        .mailform__content
+            h2.section-header.mailform__title Связаться со мной
+        form.mailform__content
             .input-fields
                 -
                     var inputs = [
-                        ['Введите ваше имя', 'user'],
-                        ['Введите ваш email', 'envelope']
+                        ['Введите ваше имя', 'user', 'Иван Иванов'],
+                        ['Введите ваш email', 'envelope', 'ivan90@mail.com']
                     ]
-                .input-fields__first_row
+                .input-fields__first-row
                     each input in inputs
                         .input-fields__item
                             .data-input
                                 label.data-input__label= input[0]
                                 .data-input__field
-                                    .data-input__icon
-                                        +icon(`${input[1]}`, "review__icon")
-                                    input(type='text' name=`${input[1]}`).data-input__box
+                                    +icon(`${input[1]}`, "data-input__icon")
+                                    .data-input__box-container
+                                        input(type='text' name=`${input[1]}` placeholder= `${input[2]}`).data-input__box
                 .input-fields__second-row
                     .input-fields__item
                         .data-input
                             label.data-input__label Сообщение к письму
                             .data-input__field
-                                .data-input__icon
-                                    +icon("message", "review__icon")
-                                textarea(name="message").data-input__box
+                                +icon("message", "data-input__icon")
+                                .data-input__box-container
+                                    textarea(name="message" placeholder="Требуется ваша помощь в создании сайта.\n" +
+                                    "Интересуют сроки и цена вопроса").data-input__box
                 .input-fields__btn
                     input(type='submit' value="Отправить").input-fields__submit-btn

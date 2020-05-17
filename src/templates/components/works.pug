@@ -1,32 +1,59 @@
 script(type="text/x-template")#preview-container
     .works-preview
-        .works-preview__visual
-            .works-preview__visual-full
-                +image(`content/1.jpg`, "works-preview__image")
-                .works-preview__visual-layout
-                    .project
-                        - var items = ["1", "2", "3", "4"];
-                        ul.project__list
-                            each item in items
-                                li.project__item
-                                    +image(`content/${item}.jpg`, "project__img")
-                .works-preview__visual-actions
-                    .works-preview__visual-actions__next
-                    .works-preview__visual-actions__prev
-        .works-preview__description
-            .descriptionblock
-                .descriptionblock__techologystack
-                    - var items = ["1", "2", "3", "4"];
-                    ul.instruments
-                        each item in items
-                            li.instruments__item
-                .descriptionblock__projectdetails
-                    .lengthtitle
-                        h2.lengthtitle__text Сайт школы образования
-                        .lengthtitle__desc
-                            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .descriptionblock__projectlink
-                    .iconlink
-                        .iconlink__symbol
-                            +icon(`link`, "iconlink__img")
-                        .iconlink__link Посмотреть сайт
+        visual(
+            :currentWork="currentWork"
+            :works="works"
+            :currentIndex="currentIndex"
+            @slide="handleSlide"
+        )
+        info(
+            :currentWork="currentWork"
+        )
+
+script(type="text/x-template")#works-visual
+    .works-preview__visual(:data-work="currentIndex + 1")
+        .works-preview__visual-full
+            //img(:src="currentWork.photo").works-preview__image
+            +image(`content/1.jpg`, "works-preview__image")
+            thumbs(
+                :works="reversedWorks"
+                :currentWork="currentWork"
+            )
+            btns(
+                @slide="$emit('slide', $event)"
+            )
+
+script(type="text/x-template")#works-thumbs
+    .works-preview__visual-layout
+        - var items = ["1", "2", "3", "4"];
+        ul.works-preview__list
+            each item, index in items
+                li.works-preview__item(class=`${index === 0 ? "works-preview__item-active" : ""}`)
+                    +image(`content/${item}.jpg`, "works-preview__img")
+
+script(type="text/x-template")#works-btns
+    .works-preview__visual-actions
+        .works-preview__visual-actions__next
+        .works-preview__visual-actions__prev
+
+script(type="text/x-template")#works-info
+    .works-preview__description
+        .descriptionblock
+            tags
+            .descriptionblock__projectdetails
+                .lengthtitle
+                    h2.lengthtitle__text Сайт школы образования
+                    .lengthtitle__desc
+                        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .descriptionblock__projectlink
+                .iconlink
+                    .iconlink__symbol
+                        +icon(`link`, "iconlink__img")
+                    .iconlink__link Посмотреть сайт
+
+script(type="text/x-template")#works-tags
+    .descriptionblock__techologystack
+        - var items = ["HTML", "CSS", "JavaScript"];
+        ul.descriptionblock__instruments
+            each item in items
+                li.descriptionblock__instruments-item= item

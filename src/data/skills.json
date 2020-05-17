@@ -18,7 +18,7 @@
         "percent": 80
       },
       {
-        "id": 3,
+        "id": 4,
         "title": "Vue.js",
         "percent": 80
       }
@@ -28,22 +28,22 @@
     "title": "Workflow",
     "skills": [
       {
-        "id": 4,
+        "id": 5,
         "title": "GIT",
         "percent": 30
       },
       {
-        "id": 5,
+        "id": 6,
         "title": "Terminal",
         "percent": 60
       },
       {
-        "id": 6,
+        "id": 7,
         "title": "npm",
         "percent": 45
       },
       {
-        "id": 7,
+        "id": 8,
         "title": "Gulp",
         "percent": 70
       }

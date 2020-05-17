@@ -2,11 +2,19 @@
     font-family: $font-semibold;
     line-height: 30px;
     margin-right: 95px;
+
+    @include tablets {
+        margin-right: 61px;
+    }
 }
 
 .user-info__field-name {
     opacity: .15;
     padding-right: 82px;
+
+    @include tablets {
+         padding-right: 56px;
+    }
 }
 
 .user-info__avatar {
@@ -14,4 +22,13 @@
     margin-bottom: 79px;
     width: 200px;
     height: 200px;
+
+    @include tablets {
+        margin-left: 0;
+        margin-bottom: 56px;
+    }
+
+    @include phones {
+        margin-left: auto;
+    }
 }

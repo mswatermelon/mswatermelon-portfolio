@@ -16,7 +16,12 @@ section.farewell
                     .footer-info__data-column
                         .footer-info__text Этот сайт я сделал в рамках обучения а Школе онлайн образования Loftschool
                         .footer-info__socials
-                            include ./socials
+                            - var icons = ["insta", "vk", "github"];
+                            ul.socials.socials--rounded
+                                each item in icons
+                                    li.socials__item
+                                        a(href="").socials__link
+                                            +icon(item, "socials__icon")
                     .footer-info__data-column
                         .footer-info__main-quote
                             .quote

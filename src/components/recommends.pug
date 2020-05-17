@@ -1,28 +1,25 @@
 .section.recommends
     .reviews
         .reviews__header
-            h2.reviews__title Что обо мне говорят
+            h2.section-header.reviews__title Что обо мне говорят
             .reviews__actions
-                ul.toolbar
-                    li.toolbar__next
-                    li.toolbar__prev
+                .reviews__actions-next
+                .reviews__actions-prev
         .reviews__content
             -
                 var reviewers = [
-                    ['reviewer1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', {name: "Ковальчук Дмитрий", profession: "Автор курса"}],
-                    ['reviewer2','Lorem ipsum dolor sit amet, consectetur adipiscing elit', {name: "Ковальчук Дмитрий", profession: "Автор курса"}]
+                    ['reviewer1', 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!\n 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', {name: "Ковальчук Дмитрий", profession: "Автор курса"}],
+                    ['reviewer2','Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах', {name: "Владимир Сабанцев", profession: "Автор курса"}]
                 ]
             each reviewer in reviewers
                 .review
-                    .review__img
-                        +image(`content/${reviewer[0]}.png`, "review__icon")
                     .review__description
                         .review__text
                             p= reviewer[1]
                         .review__author
+                            +image(`content/${reviewer[0]}.png`, "review__img")
                             .author-info
                                 .author-info__details
-                                    .person-details
-                                        h3.person-details__name= reviewer[2].name
-                                        .person-details__profession
-                                            p= reviewer[2].profession
+                                    h3.author-info__name= reviewer[2].name
+                                    .author-info__profession
+                                        p= reviewer[2].profession
