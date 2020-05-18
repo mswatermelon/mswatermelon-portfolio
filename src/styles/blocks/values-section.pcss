@@ -1,0 +1,51 @@
+.values-section {
+    color: $white;
+    background: url("../images/content/wood.png") top no-repeat;
+    background-size: contain;
+    display: flex;
+
+    @include tablets {
+        background-size: cover;
+        flex-direction: column-reverse;
+    }
+}
+
+.values-section__image {
+    margin-top: 129px;
+
+    @include tablets {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.values-section__icon {
+    width: 720px;
+
+    @include tablets {
+        transform: rotate(-90deg);
+        width: 426px;
+    }
+}
+
+.values-section__content {
+    margin-top: 149px;
+
+    @include tablets {
+        text-align: center;
+    }
+}
+
+.values-section__title {
+    max-width: 586px;
+
+    @include tablets {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+.values-section__values {
+    padding: 96px 127px 96px 127px;
+}

@@ -1,0 +1,62 @@
+script(type="text/x-template")#preview-container
+    .works-preview
+        visual(
+            :currentWork="currentWork"
+            :works="works"
+            :currentIndex="currentIndex"
+            @slide="handleSlide"
+        )
+        info(
+            :currentWork="currentWork"
+        )
+
+script(type="text/x-template")#works-visual
+    .works-preview__visual(:data-work="currentIndex + 1")
+        .works-preview__visual-full
+            img(:src="currentWork.photo").works-preview__image
+            thumbs(
+                :works="works"
+                :currentWork="currentWork"
+            )
+            btns(
+                @slide="$emit('slide', $event)"
+            )
+
+script(type="text/x-template")#works-thumbs
+    .works-preview__visual-layout
+        ul.works-preview__list
+            li.works-preview__item(
+                v-for="work in works"
+                :key="work.id"
+                :class="{'works-preview__item-active': currentWork.id === work.id}"
+            )
+                a.works-preview__img-container
+                    img(:src="work.photo").works-preview__img
+
+script(type="text/x-template")#works-btns
+    .works-preview__visual-actions
+        a(@click.prevent="$emit('slide', 'next')").works-preview__visual-actions__next
+        a(@click.prevent="$emit('slide', 'prev')").works-preview__visual-actions__prev
+
+script(type="text/x-template")#works-info
+    .works-preview__description
+        .descriptionblock
+            tags(
+                :tags="tagsArray"
+            )
+            .descriptionblock__projectdetails
+                .lengthtitle
+                    h2.lengthtitle__text {{currentWork.title}}
+                    .lengthtitle__desc
+                        p {{currentWork.desc}}
+            .descriptionblock__projectlink
+                a(:href="currentWork.link").iconlink
+                    .iconlink__symbol
+                        +icon(`link`, "iconlink__img")
+                    .iconlink__link Посмотреть сайт
+
+script(type="text/x-template")#works-tags
+    .descriptionblock__techologystack
+        ul.descriptionblock__instruments
+            li.descriptionblock__instruments-item(v-for="tag in tags" :key="tag")
+                .tag {{tag}}

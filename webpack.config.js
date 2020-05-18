@@ -36,7 +36,7 @@ module.exports = (env, argv) => {
   };
 
   const files = {
-    test: /\.(png|jpe?g|gif|woff2?)$/i,
+    test: /\.(png|jpe?g|gif|woff?2|ttf)$/i,
     loader: "file-loader",
     options: {
       name: "[hash].[ext]"

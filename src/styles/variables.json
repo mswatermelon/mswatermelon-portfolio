@@ -4,5 +4,12 @@
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-phones": "320px",
+  "header-socials-color": "#706a65",
+  "white": "#ffffff",
+  "black": "#333c49",
+  "link": "#586ed3",
+  "font-extrabold": "OpenSans-Extrabold",
+  "font-semibold": "OpenSans-Semibold",
+  "preview-btn-width": "56px"
 }

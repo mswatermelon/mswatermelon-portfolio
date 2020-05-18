@@ -1,0 +1,33 @@
+.examples__container {
+    margin: 0 160px;
+
+    @include tablets {
+        margin: 0 auto;
+    }
+
+    @include phones {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+.examples__content {
+    padding-bottom: 60px;
+    @include phones {
+        padding-bottom: 0px;
+    }
+}
+
+.examples__title {
+    @include phones {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+.examples__title-content {
+    color: $black;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+}

@@ -1,0 +1,21 @@
+script(type="text/x-template")#all-reviews
+    .reviews
+        .reviews__header
+            h2.section-header.reviews__title Что обо мне говорят
+            .reviews__actions
+                a(@click="previous()" ref="prevBtn").reviews__actions-next
+                a(@click="next()" ref="nextBtn").reviews__actions-prev
+        .reviews__content
+            flickity(ref="flickity" :options="flickityOptions").reviews__list
+                .review(v-for="(review, index) in reviews" :key="index")
+                    .review__description
+                        .review__text
+                            p {{review.text}}
+                        .review__author
+                            .review__img-container
+                                img(:src="review.photo").review__img
+                            .author-info
+                                .author-info__details
+                                    h3.author-info__name {{review.author}}
+                                    .author-info__profession
+                                        p {{review.occ}}

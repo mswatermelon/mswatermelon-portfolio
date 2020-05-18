@@ -1,0 +1,37 @@
+.review {
+    width: 420px;
+    margin-right: 80px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.review__description {
+    padding-left: 97px;
+    position: relative;
+    &:before {
+        content: '';
+        background: svg-load('quote.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+        display: block;
+        position: absolute;
+        opacity: .05;
+        width: 75px;
+        height: 63px;
+        left: 0;
+    }
+}
+
+.review__text {
+    opacity: 0.5;
+    font-family: $font-semibold;
+    margin-bottom: 32px;
+}
+
+.review__author {
+    display: flex;
+    align-items: center;
+}
+
+.review__img {
+    margin-right: 32px;
+}
