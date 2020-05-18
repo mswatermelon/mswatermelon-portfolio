@@ -1,25 +1,2 @@
 .section.recommends
-    .reviews
-        .reviews__header
-            h2.section-header.reviews__title Что обо мне говорят
-            .reviews__actions
-                .reviews__actions-next
-                .reviews__actions-prev
-        .reviews__content
-            -
-                var reviewers = [
-                    ['reviewer1', 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!\n 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', {name: "Ковальчук Дмитрий", profession: "Автор курса"}],
-                    ['reviewer2','Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах', {name: "Владимир Сабанцев", profession: "Автор курса"}]
-                ]
-            each reviewer in reviewers
-                .review
-                    .review__description
-                        .review__text
-                            p= reviewer[1]
-                        .review__author
-                            +image(`content/${reviewer[0]}.png`, "review__img")
-                            .author-info
-                                .author-info__details
-                                    h3.author-info__name= reviewer[2].name
-                                    .author-info__profession
-                                        p= reviewer[2].profession
+    #reviews-component

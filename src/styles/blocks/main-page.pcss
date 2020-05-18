@@ -1,5 +1,9 @@
 .main-page {
-    background-image: url("../images/content/bridge.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+
+    @include tablets {
+        background-image: url("../images/content/bridge.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
