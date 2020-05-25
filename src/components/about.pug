@@ -14,14 +14,14 @@
                 table.user-info__data
                     tbody.user-info__data-body
                         each row in userdata
-                            tr
-                                td.user-info__field-name #{row[0]}
-                                td #{row[1]}
+                            tr.user-info__row
+                                td.user-info__cell.user-info__cell--name #{row[0]}
+                                td.user-info__cell #{row[1]}
 
     .about__content
         .about__disclaimer Привет, меня зовут
         h2.about__title Владимир Астаханов
         .about__desc
             p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-        .about__ps
+        .about_note
             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!

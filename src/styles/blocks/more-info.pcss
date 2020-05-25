@@ -3,10 +3,18 @@
     background-size: cover;
     position: relative;
     display: flex;
+
+    &:before {
+        content: '';
+        background: url('../images/content/leaves.png') center center no-repeat;
+        right: 0;
+        top: -100px;
+        position: absolute;
+        width: 577px;
+        height: 1404px;
+    }
 }
 
-.more-info__random-img {
-    right: 0;
-    top: -35px;
-    position: absolute;
+.more-info__content {
+    padding: 0 20px 0 160px;
 }

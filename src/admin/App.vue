@@ -1,70 +1,15 @@
 <template lang='pug'>
-  form.form(@submit.prevent='submit')
-    input(type='text' placeholder='login' v-model='user.login')
-    .error-box {{ validation.firstError('user.login') }}
-    input(type='password' placeholder='password' v-model='user.password')
-    .error-box {{ validation.firstError('user.password') }}
-    button(type='submit') login
+    .router
+        template(v-if="$route.meta.login")
+            .login
+                router-view
+        template(v-else)
+            .admin
+                router-link(to="/") Перейти в about
+                router-link(to="/works") Перейти в works
+                router-link(to="/reviews") Перейти в reviews
+
+                router-view
 </template>
 <script>
-    import {SimpleVueValidator} from 'simple-vue-validator';
-    const Validator = SimpleVueValidator.validator;
-
-    export default {
-        mixins: [SimpleVueValidator.mixin],
-        validators: {
-            'user.login': function (value) {
-                return Validator.custom(function () {
-                    if (value.length < 5) {
-                        return 'Не менее 5 символов';
-                    }
-                })
-            },
-            'user.password': function (value) {
-                return Validator.custom(function () {
-                    if (value.length < 8) {
-                        return 'Не менее 8 символов';
-                    }
-                })
-            }
-        },
-        data() {
-            return {
-                user: {
-                    login: '',
-                    password: ''
-                }
-            }
-        },
-        methods: {
-            submit() {
-                this.$validate()
-                    .then((success) => {
-                        if (success) {
-                            console.log('Validation success');
-                            var formData = new FormData();
-
-                            formData.append('name', this.user.login);
-                            formData.append('password', this.user.password);
-                            fetch('https://webdev-api.loftschool.com/login', {
-                                method: 'POST',
-                                body: formData
-                            })
-                                .then((res) => res.json())
-                                .then(data => {
-                                    console.log(data);
-                                })
-                                .catch((err) => {
-                                    console.log(err);
-                                })
-                        } else {
-                            console.log('Validation fail')
-                        }
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    })
-            }
-        }
-    }
 </script>

@@ -11,7 +11,12 @@ const thumbs = {
 const  visual = {
     template: "#works-visual",
     components: { thumbs, btns },
-    props: ["currentWork", "works", "currentIndex"]
+    props: ["currentWork", "works", "currentIndex"],
+    methods: {
+        handleSlide(direction, selectedIndex) {
+            this.$emit('slide', direction, --selectedIndex);
+        }
+    }
 };
 
 const tags = {
@@ -56,13 +61,16 @@ new Vue({
             if (value > worksAmountFromZero) this.currentIndex = 0;
             if (value < 0) this.currentIndex = worksAmountFromZero;
         },
-        handleSlide(direction) {
+        handleSlide(direction, selectedIndex) {
             switch (direction) {
                 case "next":
                     this.currentIndex++;
                     break;
                 case "prev":
                     this.currentIndex--;
+                    break;
+                case "select":
+                    this.currentIndex = selectedIndex;
                     break;
             }
         },

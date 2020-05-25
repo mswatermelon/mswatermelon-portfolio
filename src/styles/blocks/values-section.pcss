@@ -1,7 +1,7 @@
 .values-section {
     color: $white;
     background: url("../images/content/wood.png") top no-repeat;
-    background-size: contain;
+    background-size: cover;
     display: flex;
 
     @include tablets {
@@ -30,7 +30,30 @@
 }
 
 .values-section__content {
-    margin-top: 149px;
+    padding-left: 660px;
+    position: relative;
+    &:before {
+        content: '';
+        background: url('../images/content/hands.png') center center no-repeat;
+        position: absolute;
+        width: 682px;
+        height: 983px;
+        left: 0;
+        top: 129px;
+        background-size: 682px 983px;
+    }
+
+    @include desktop {
+        padding-left: 340px;
+
+        &:before {
+            left: -100px;
+            top: 377px;
+            width: 490px;
+            height: 707px;
+            background-size: 490px 707px;
+        }
+    }
 
     @include tablets {
         text-align: center;
@@ -47,5 +70,9 @@
 }
 
 .values-section__values {
-    padding: 96px 127px 96px 127px;
+    padding: 96px 20px 96px 127px;
+
+    @include tablets {
+        padding-left: 94px;
+    }
 }

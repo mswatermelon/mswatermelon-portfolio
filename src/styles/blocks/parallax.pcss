@@ -1,5 +1,6 @@
 .parallax {
   position: absolute;
+  overflow: hidden;
   top: 0;
   bottom: 0;
   left: 0;
@@ -14,21 +15,23 @@
 .parallax__layer {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  will-change: transform;
+  width: 100%;
+  height: 100%;
+
   &:nth-child(1) {
     display: block;
     .parallax__image {
-      object-fit: cover;
+      left: 0;
+      bottom: 0;
       width: 100%;
-      height: 100%;
+      height: 800px;
+
+      @include desktop {
+        height: 1200px;
+      }
     }
   }
   &:nth-child(2) {
-     transform: translateZ(-50px) scale(1.5);
     display: block;
     .parallax__image {
       left: 0;
@@ -36,49 +39,61 @@
     }
   }
   &:nth-child(3) {
-     transform: translateZ(-100px) scale(2);
     display: block;
     .parallax__image {
       left: 0;
-      top: 368px;
+      top: 280px;
+
+      @include desktop {
+        top: 185px;
+        left: -480px;
+      }
     }
   }
   &:nth-child(4) {
-     transform: translateZ(-150px) scale(2.5);
     display: block;
     .parallax__image {
       left: 0;
-      bottom: 0;
+      top: 620px;
+
+      @include desktop{
+        top: 430px;
+        left: -480px;
+      }
     }
   }
   &:nth-child(5) {
-     transform: translateZ(-200px) scale(3);
     display: block;
     .parallax__image {
       left: 0;
-      top: 500px;
+      top: 350px;
+
+      @include desktop {
+        top: 250px;
+        left: -480px;
+      }
     }
   }
   &:nth-child(6) {
     display: block;
-     transform: translateZ(-250px) scale(3.5) ;
     .parallax__image {
       left: 0;
-      bottom: 0;
+      top: 1000px;
     }
   }
   &:nth-child(7) {
     display: block;
-     transform: translateZ(-300px) scale(4);
     .parallax__image {
       left: 0;
-      bottom: 46px;
+      top: 1050px;
     }
   }
 }
 
 .parallax__image {
-  max-width: initial;
-  max-height: initial;
+  @include desktop {
+    max-width: initial;
+    max-height: initial;
+  }
   position: absolute;
 }

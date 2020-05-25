@@ -12,7 +12,6 @@
 
 .about__user-data {
     font-family: $font-semibold;
-    flex: 1;
 
     @include tablets {
         margin-bottom: 31px;
@@ -20,7 +19,7 @@
 }
 
 .about__content {
-    flex: 4;
+    max-width: 530px;
     padding-left: 53px;
 
     @include tablets {
@@ -47,10 +46,21 @@
     }
 }
 
-.about__ps {
+.about_note {
     opacity: .5;
     line-height: 30px;
     font-style: italic;
+    position: relative;
+    :before {
+        content: '';
+        background: url('../images/content/star.png') center center no-repeat;
+        left: -52px;
+        top: 7px;
+        display: block;
+        position: absolute;
+        width: 22px;
+        height: 22px;
+    }
 }
 
 .about__title {
