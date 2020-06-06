@@ -12,9 +12,22 @@
         position: absolute;
         width: 577px;
         height: 1404px;
+
+        @include tablets {
+            right: -200px;
+        }
+
+        @include phablets {
+            content: none;
+        }
     }
 }
 
 .more-info__content {
     padding: 0 20px 0 160px;
+
+    @include tablets {
+        padding-left: 0;
+        width: 100%;
+    }
 }

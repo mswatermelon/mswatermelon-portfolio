@@ -29,6 +29,7 @@
 
     @include tablets {
         font-size: 48px;
+        max-width: 275px;
     }
 
     @include phones {
@@ -41,6 +42,6 @@
     display: flex;
     @include tablets {
         margin-left: 0;
-        display: block;
+        flex-direction: column;
     }
 }

@@ -12,10 +12,18 @@
 .farewell__container {
     display: flex;
     justify-content: space-between;
+
+    @include phablets {
+        flex-direction: column;
+    }
 }
 
 .farewell__main-data {
     display: flex;
+
+    @include tablets {
+        flex-direction: column;
+    }
 }
 
 .farewell__year {
@@ -25,6 +33,11 @@
     opacity: .1;
     margin-right: 60px;
     white-space: nowrap;
+
+    @include tablets {
+        margin-bottom: 31px;
+        flex: 0;
+    }
 }
 
 .farewell__hero {
@@ -48,12 +61,29 @@
 .farewell__data {
     display: flex;
     justify-content: space-between;
+
+    @include tablets {
+        flex-direction: column;
+    }
 }
 
 .farewell__more {
     margin-left: 143px;
+
+    @include tablets {
+        max-width: 445px;
+        margin-left: 75px;
+    }
+
+    @include phablets {
+        margin-left: 0;
+    }
 }
 
 .farewell__menu {
     margin-bottom: 70px;
+
+    @include tablets {
+        margin-bottom: 63px;
+    }
 }

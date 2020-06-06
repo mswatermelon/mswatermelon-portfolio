@@ -11,6 +11,15 @@
 
 .reviews__title {
     margin-right: 120px;
+
+    @include tablets {
+        margin-right: 20px;
+    }
+
+    @include phablets {
+        margin-right: 0;
+        margin-bottom: 26px;
+    }
 }
 
 .reviews__actions-next,
@@ -45,8 +54,28 @@
 
 .reviews__header {
     margin-bottom: 96px;
+
+    @include phablets {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 36px;
+    }
 }
 
 .reviews__content {
     min-width: 57.5rem;
+
+    @include tablets {
+        min-width: 53.5rem;
+    }
+
+    @include phablets {
+        min-width: 320px;
+    }
+}
+
+.reviews__list {
+    @include tablets {
+        max-width: 480px;
+    }
 }

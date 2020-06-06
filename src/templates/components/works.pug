@@ -19,9 +19,6 @@ script(type="text/x-template")#works-visual
                 :currentWork="currentWork"
                 @slide="handleSlide"
             )
-            btns(
-                @slide="$emit('slide', $event)"
-            )
 
 script(type="text/x-template")#works-thumbs
     .works-preview__visual-layout
@@ -33,6 +30,9 @@ script(type="text/x-template")#works-thumbs
             )
                 a(@click.prevent="$emit('slide', 'select', work.id)").works-preview__img-container
                     img(:src="work.photo").works-preview__img
+        btns(
+            @slide="$emit('slide', $event)"
+        )
 
 script(type="text/x-template")#works-btns
     .works-preview__visual-actions

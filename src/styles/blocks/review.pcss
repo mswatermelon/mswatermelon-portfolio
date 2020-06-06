@@ -4,6 +4,10 @@
     &:last-child {
         margin-right: 0;
     }
+
+    @include tablets {
+        margin-right: 47px;
+    }
 }
 
 .review__description {
@@ -19,12 +23,25 @@
         height: 63px;
         left: 0;
     }
+
+    @include tablets {
+        padding-left: 40px;
+
+        &:before {
+            width: 30px;
+            height: 26px;
+        }
+    }
 }
 
 .review__text {
     opacity: 0.5;
     font-family: $font-semibold;
     margin-bottom: 32px;
+
+    @include phablets {
+        width: 300px;
+    }
 }
 
 .review__author {

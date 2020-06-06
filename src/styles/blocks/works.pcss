@@ -1,6 +1,11 @@
 .works-preview {
     margin-top: 92px;
     display: flex;
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .works-preview__visual-layout {
@@ -26,17 +31,39 @@
             transform: translateY(-15%);
             margin-left: -11%;
         }
+        @include phablets {
+            content: none;
+        }
+    }
+
+    @include tablets {
+        margin-right: 100px;
+        margin-bottom: 60px;
+    }
+
+
+    @include phablets {
+        margin-right: 0;
     }
 }
 
 .works-preview__description {
     width: 30%;
+
+    @include tablets {
+        width: 80%;
+    }
 }
 
 .works-preview__visual-actions {
     position: absolute;
     right: -$preview-btn-width;
     bottom: 60px;
+
+    @include phablets {
+        right: 0;
+        bottom: 0;
+    }
 }
 
 .works-preview__visual-actions__next,
@@ -72,6 +99,10 @@
     position: absolute;
     right: 0;
     bottom: 60px;
+
+    @include phablets {
+        display: none;
+    }
 }
 
 .works-preview__item {

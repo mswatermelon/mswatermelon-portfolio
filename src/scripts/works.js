@@ -4,13 +4,14 @@ const btns = {
     template: "#works-btns"
 };
 const thumbs = {
+    components: { btns },
     template: "#works-thumbs",
     props: ["works", "currentWork"]
 };
 
 const  visual = {
     template: "#works-visual",
-    components: { thumbs, btns },
+    components: { thumbs },
     props: ["currentWork", "works", "currentIndex"],
     methods: {
         handleSlide(direction, selectedIndex) {

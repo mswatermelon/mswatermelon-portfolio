@@ -1,15 +1,20 @@
 .menu__list {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .menu__item {
-    margin-right: 20px;
+    margin-right: 60px;
+
+    &:last-child {
+        margin-right: 0;
+    }
 
     @include desktop {
         margin-right: 60px;
     }
 
-    &:last-child {
-        margin-right: 0;
+    @include tablets {
+        margin-bottom: 32px;
     }
 }

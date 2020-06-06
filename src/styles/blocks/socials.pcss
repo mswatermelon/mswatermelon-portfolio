@@ -1,5 +1,17 @@
 .socials {
     display: flex;
+
+    @include tablets {
+        margin-right: 93px;
+    }
+
+    @include phablets {
+        margin-right: 50px;
+    }
+
+    @include phones {
+        display: none;
+    }
 }
 
 .socials--rounded {

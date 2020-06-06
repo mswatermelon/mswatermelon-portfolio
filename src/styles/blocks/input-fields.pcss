@@ -8,6 +8,10 @@
 .input-fields__first-row,
 .input-fields__second-row {
     display: flex;
+
+    @include phablets {
+        flex-direction: column;
+    }
 }
 
 .input-fields__item {
@@ -16,6 +20,21 @@
 
     &:last-child {
         margin-right: 0;
+    }
+
+    @include phablets {
+        margin-bottom: 39px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.input-fields__btn {
+    @include tablets {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -28,4 +47,9 @@
     color: $white;
     background: linear-gradient(45deg, #d47d1d, #dc9322);
     border: none;
+
+    @include phones {
+        width: 260px;
+        padding: 16px 80px;
+    }
 }
