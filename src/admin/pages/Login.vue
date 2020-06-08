@@ -1,7 +1,7 @@
 <template lang='pug'>
     .login
         .login__form-container
-            .login__close
+            button.login__close(@click.prevent="goToStart")
             form.form(@submit.prevent='submit').login__form
                 .login__title Авторизация
                 label.login__label
@@ -9,8 +9,8 @@
                     .login__field
                         .login__field-icon.login__icon-user
                         .login__input-container
-                            input(type='text' v-model='user.login').login__input.login__password
-                .error-box {{ validation.firstError('user.login') }}
+                            input(type='text' v-model='user.name').login__input.login__password
+                .error-box {{ validation.firstError('user.name') }}
                 label.login__label
                     .login__label-title Пароль
                     .login__field
@@ -25,13 +25,13 @@
     import SimpleVueValidator from 'simple-vue-validator';
     import axios from '../request';
 
-    const Validator = SimpleVueValidator.validator;
+    const Validator = SimpleVueValidator.Validator;
 
     export default {
         name: 'Login',
         mixins: [SimpleVueValidator.mixin],
         validators: {
-            'user.login': function (value) {
+            'user.name': function (value) {
                 return Validator.custom(function () {
                     if (value.length < 5) {
                         return 'Не менее 5 символов';
@@ -49,7 +49,7 @@
         data() {
             return {
                 user: {
-                    login: '',
+                    name: '',
                     password: ''
                 }
             }
@@ -64,10 +64,7 @@
                                 .then(({data})=>{
                                     console.log(data);
                                     localStorage.setItem('token', data.token);
-                                    return data.json();
-                                })
-                                .then(data => {
-                                    console.log(data);
+                                    this.$router.replace("/");
                                 })
                                 .catch((err) => {
                                     console.log(err);
@@ -80,6 +77,9 @@
                     .catch((err) => {
                         console.log(err);
                     })
+            },
+            goToStart() {
+                window.location = './'
             }
         }
     }
@@ -89,7 +89,7 @@
 
     .login {
         position: fixed;
-        color: #414c63;
+        color: $text-color;
         top: 0;
         bottom: 0;
         left: 0;
@@ -236,18 +236,18 @@
     }
 
     .login__icon-user {
-        background: svg-load("user.svg", fill=#414c63) no-repeat;
+        background: svg-load("user.svg", fill=$text-color) no-repeat;
     }
 
     .login__icon-key {
-        background: svg-load("key.svg", fill=#414c63) no-repeat;
+        background: svg-load("key.svg", fill=$text-color) no-repeat;
     }
 
     .login__close {
         position: absolute;
         top: 31px;
         right: 29px;
-        background: svg-load("remove.svg", fill=#414c63) no-repeat;
+        background: svg-load("remove.svg", fill=$text-color) no-repeat;
         width: 20px;
         height: 20px;
     }

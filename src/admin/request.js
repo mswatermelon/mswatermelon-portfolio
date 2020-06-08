@@ -1,26 +1,28 @@
 import axios from "axios";
 
-axios.defaults.baseUrl = 'https://webdev-api.loftschool.com/';
+const requests = axios.create({
+    baseURL: "https://webdev-api.loftschool.com/"
+});
 
 const token = localStorage.getItem("token");
 
 if (token) {
-    axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+    requests.defaults.headers["Authorization"] = `Bearer ${token}`;
 } else {
     console.warn("Отсутствует токен");
 }
 
-axios.interceptors.response.use(function (response) {
+requests.interceptors.response.use(function (response) {
         console.log(response);
         return response;
     }, function (error) {
         if (error.response.status === 401) {
-            return axios.post('/refreshToken').then(({data}) => {
+            return requests.post('/refreshToken').then(({data}) => {
                 localStorage.setItem('token', data.token);
-                axios.defaults.headers["Authorization"] = `Bearer ${data.token}`;
+                requests.defaults.headers["Authorization"] = `Bearer ${data.token}`;
                 error.config.headers["Authorization"] = `Bearer ${data.token}`;
 
-                return axios(error.config);
+                return requests(error.config);
             });
         }
 
@@ -28,4 +30,4 @@ axios.interceptors.response.use(function (response) {
     }
 );
 
-export default axios;
+export default requests;
